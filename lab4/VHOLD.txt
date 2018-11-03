@@ -1,0 +1,23 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity lab4 is 
+port	(A,B : in std_logic_vector (2 downto 0);
+		C : in std_logic;	
+		Q : out std_logic);
+end entity;
+
+architecture structural of lab4 is
+--declarative part of architecture
+component design
+port (a,b,c : in std_logic;
+		q : out std_logic);
+end component;
+
+signal D :std_logic_vector(2 downto 0);
+begin
+inst1: design port map(A(0),B(0),C,   D(0));
+inst2: design port map(A(1),B(1),D(0),D(1));
+inst3: design port map(A(2),B(2),D(1) Q);
+end structural;
+		
